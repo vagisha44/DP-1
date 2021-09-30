@@ -1,0 +1,23 @@
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        n=len(nums)
+        maxx=0
+        return self.helper(nums,0,maxx)
+    def helper(self,nums,n,maxx):
+          #basecase
+        if n>=len(nums):
+            return maxx
+        choose=self.helper(nums,n+2,maxx+nums[n])
+        donotchoose=self.helper(nums,n+1,maxx)
+        return max(choose,donotchoose)
+        
+        
+        
+      
+        
+        
+        
+        
+        
+        
+        
