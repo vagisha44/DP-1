@@ -1,0 +1,25 @@
+class Solution:
+    #memo = {}
+    def rob(self, nums: List[int]) -> int:
+        if len(nums)==0 or nums==None:
+            return 0
+        
+        c=0
+        dc=0
+        for i in range(len(nums)):
+            temp=dc
+            dc=max(c,dc)
+            c=nums[i]+temp
+        return max(c,dc)
+            
+        
+        
+        
+        #basecase
+        
+        
+        
+        
+        
+        
+        
